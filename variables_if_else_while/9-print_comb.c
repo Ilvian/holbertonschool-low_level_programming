@@ -10,8 +10,8 @@ int main(void)
 	int dc;
 	for (dc = 48 ; dc < ':' ; dc++){
 		putchar(dc);
-		putchar(',')
-		putchar(' ')
+		putchar(',');
+		putchar(' ');
 	}
 	putchar ('\n');
 	return (0);
