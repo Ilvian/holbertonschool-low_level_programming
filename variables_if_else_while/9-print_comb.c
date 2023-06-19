@@ -8,9 +8,12 @@
 int main(void)
 {
 	int dc;
-	for (dc = 48 ; dc < ':' ; dc++){
+
+	for (dc = 48 ; dc < ':' ; dc++)
+	{
 		putchar(dc);
-		if (dc != 57){
+		if (dc != 57)
+		{
 		putchar(',');
 		putchar(' ');
 		}
