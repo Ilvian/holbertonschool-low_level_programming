@@ -7,12 +7,9 @@
  */
 int main(void)
 {
-	char number
-	number = 0;
-	while (number < 10);
-	putchar ("%d\n",number);
-		number++;
-
-
+	int n = 0;
+	while (n < 10)
+	       printf ("%d\n");
+	n++;
 	return (0);
 }
