@@ -8,9 +8,9 @@
 int main(void)
 {
 	int dc;
-	for (dc = 48 ; dc < ':' ; dc++){
+
+	for (dc = 48 ; dc < ':' ; dc++)
 		putchar(dc);
-	}
 	putchar ('\n');
 	return (0);
 }
