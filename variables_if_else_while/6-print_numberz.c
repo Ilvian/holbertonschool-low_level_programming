@@ -8,7 +8,7 @@
 int main(void)
 {
 	int dc;
-	for (dc = 0 ; dc < 10 ; dc++){
+	for (dc = 48 ; dc < ':' ; dc++){
 		putchar(dc);
 	}
 	putchar ('\n');
