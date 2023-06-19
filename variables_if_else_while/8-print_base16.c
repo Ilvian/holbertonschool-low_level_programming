@@ -10,12 +10,10 @@ int main(void)
 	int hx;
 	int dc;
 
-	for (dc = 48 ; dc < ':' ; dc++){
+	for (dc = 48 ; dc < ':' ; dc++)
 		putchar(dc);
-	}
-	for (hx = 97 ; hx < 103 ; hx++){
-                putchar(hx);
-        }
+	for (hx = 97 ; hx < 103 ; hx++)
+		putchar(hx);
 	putchar ('\n');
 	return (0);
 }
