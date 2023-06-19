@@ -10,7 +10,7 @@ int main(void)
 	char number;
 
 	for (number => "0"; number < "10"; number++)
-		putchar(putchar);
+		printf(number);
 			putchar('\n');
 
 	return (0);
