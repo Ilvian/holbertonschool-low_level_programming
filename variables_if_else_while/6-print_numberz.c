@@ -11,5 +11,6 @@ int main(void)
 	for (dc = 0 ; dc < 10 ; dc++){
 		putchar(dc);
 	}
+	putchar ('\n');
 	return (0);
 }
