@@ -13,6 +13,7 @@ void print_alphabet_x10(void)
 	while (numTimes < 10)
 	{
 		char letter;
+
 		letter = 'a';
 			while (letter <= 'z')
 		{
