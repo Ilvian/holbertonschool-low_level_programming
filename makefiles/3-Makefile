@@ -16,5 +16,4 @@ ${RM} *~ *.tmp ${NAME} ${OBJ}
 clean:
 ${RM} *~ *.tmp ${NAME}
 
-re:
-	oclean all
+re:oclean all
