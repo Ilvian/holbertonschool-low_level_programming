@@ -8,12 +8,12 @@ all: ${OBJ}
 	${CC} ${OBJ} -o ${NAME}
 
 oclean:
-${RM} ${OBJ}
+	${RM} ${OBJ}
 
 fclean:
-${RM} *~ *.tmp ${NAME} ${OBJ}
+	${RM} -f *~ *.tmp ${NAME} ${OBJ}
 
 clean:
-${RM} *~ *.tmp ${NAME}
+	${RM} -f *~ *.tmp ${NAME}
 
-re:oclean all
+re:	oclean all
