@@ -1,8 +1,9 @@
 #include "main.h"
 
 /**
- * main - Entry point
- *
+ * add - Entry point
+ *@x: first number
+ *@y: second number
  * Return: Always 0 (Success)
  */
 int add(int x, int y)
