@@ -1,10 +1,9 @@
 #include "main.h"
 #include <stdio.h>
-
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * print_to_98 - main func
+ * @n: first int
+ * Return: sum of int x and int y
  */
 void print_to_98(int n)
 {
@@ -18,7 +17,7 @@ void print_to_98(int n)
 			if (x != 98)
 				printf("%d, ", x);
 			else if (x == 98)
-			printf ("%d\n", x);
+			printf("%d\n", x);
 		}
 	}
 	else if (n >= 98)
@@ -28,7 +27,7 @@ void print_to_98(int n)
 	if (y != 98)
 	printf("%d, ", y);
 	else if (y == 98)
-	printf ("%d\n", y);
+	printf("%d\n", y);
 	}
 	}
-}	
+}

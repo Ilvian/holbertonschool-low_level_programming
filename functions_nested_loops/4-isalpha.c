@@ -1,9 +1,9 @@
 #include "main.h"
-
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * _isalpha - it takes an argument c of value integer
+ * @c: character
+ * Return: 1 if the character
+ * is a letter and returns 0 if not
  */
 int _isalpha(int c)
 {

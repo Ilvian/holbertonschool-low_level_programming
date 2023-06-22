@@ -1,9 +1,8 @@
 #include "main.h"
-
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * _abs - it takes an argument of type in and returns its anbosulte value
+ * @n: integer
+ * Return: the absolute value of n
  */
 int _abs(int n)
 {
