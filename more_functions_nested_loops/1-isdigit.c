@@ -1,9 +1,8 @@
 #include "main.h"
-
 /**
- * main - Entry point
- *
- * Return: Always 0 (Success)
+ * _isdigit - main function
+ * @c: parameter
+ * Return: 1 if uppercase and 0 if false
  */
 int _isdigit(int c)
 {

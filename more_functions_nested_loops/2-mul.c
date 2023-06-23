@@ -1,8 +1,9 @@
 #include "main.h"
-
 /**
- * print_alphabet - prints all alhpabet
- * letters in lowercase
+ * mul - main function
+ * @a: first parameter
+ * @b: second parameter
+ * Return: 1 if uppercase and 0 if false
  */
 int mul(int a, int b)
 {
