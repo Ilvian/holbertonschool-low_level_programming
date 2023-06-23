@@ -1,8 +1,8 @@
 #include "main.h"
-
 /**
- * print_alphabet - prints all alhpabet
- * letters in lowercase
+ * print_square - main function
+ * @size: parameter
+ * Return: 1 if uppercase and 0 if false
  */
 void print_square(int size)
 {

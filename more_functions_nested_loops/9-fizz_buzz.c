@@ -1,5 +1,8 @@
 #include <stdio.h>
-
+/**
+ * main - main function
+ * Return: returns 0 if succesful
+ */
 int main(void)
 {
 	int i;
