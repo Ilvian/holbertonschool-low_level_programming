@@ -1,8 +1,7 @@
 #include "main.h"
-
 /**
- * print_alphabet - prints all alhpabet
- * letters in lowercase
+ * more_numbers - main function
+ * Return: 1 if uppercase and 0 if false
  */
 void more_numbers(void)
 {
