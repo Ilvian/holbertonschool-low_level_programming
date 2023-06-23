@@ -1,8 +1,8 @@
 #include "main.h"
-
 /**
- * print_alphabet - prints all alhpabet
- * letters in lowercase
+ * print_triangle - main function
+ * @size: parameter
+ * Return: 1 if uppercase and 0 if false
  */
 void print_triangle(int size)
 {
@@ -13,13 +13,13 @@ void print_triangle(int size)
 		_putchar ('\n');
 	else
 		{
-			for (x = 1; x < size; x++)
+			for (x = 0; x < size; x++)
 			{
 				for (y = x; y <= size; y++)
 				{
 					_putchar (' ');
 				}
-				for (y = 1; y <= x; y++)
+				for (y = 0; y <= x; y++)
 				{
 					_putchar ('#');
 				}
