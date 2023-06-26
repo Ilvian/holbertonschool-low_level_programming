@@ -1,8 +1,7 @@
 #include "main.h"
 /**
- * _strlen - main function
- * Return: returns l
- * @s: string
+ * _puts - main function
+ * @str: param
  */
 void _puts(char *str)
 {
