@@ -1,7 +1,9 @@
 #include "main.h"
 /**
- * print_rev - main function
- * @s: param
+ * _strcat - main function
+ * @dest: param
+ * @src: param
+ * Return: dest
  */
 char *_strcat(char *dest, char *src)
 {
