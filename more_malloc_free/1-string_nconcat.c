@@ -1,37 +1,38 @@
-#include "main.h"
+#include <stdio.h>
 #include <stdlib.h>
+#include "main.h"
+#include <string.h>
 /**
  *string_nconcat - function that concatenates two strings
- *@s1: input
- *@s2: input
- *@n: input
- *Return: return 0
+ *@s1: first string
+ *@s2: second string
+ *@n: n bytes of second string
+ *Return: pointer to concatenated string
  */
+
 char *string_nconcat(char *s1, char *s2, unsigned int n)
 {
-	char *s;
-	unsigned int i, j, len1, len2;
+	char *new;
+	int i = 0;
 
-	while (s1 && s1[len1])
-		len1++;
-	while (s2 && s2[len2])
-		len2++;
-	if (n < len2)
-		s = malloc(sizeof(char) * (len1 + n + 1));
-	else
-		s = malloc(sizeof(char) * (len1 + len2 + 1));
-	if (!s)
-		return (NULL);
-	while (i < len1)
+	if (s2 == NULL)
 	{
-		s[i] = s1[i];
-		i++;
+		s2 = "";
+		n = 0;
 	}
-	while (n < len2 && 1 < (len1 + n))
-		s[i++] = s2[j++];
-	while (n >= len2 && i < (len1 + len2))
-		s[i++] = s2[j++];
-	s[i] = '\0';
-	return (s);
+	if (s1 == NULL)
+		s1 = "";
+	if (n >= (unsigned int) strlen(s2))
+		n = strlen(s2);
+	new = malloc(strlen(s1) + n + 1);
+	if (new == NULL)
+	{
+		free(new);
+		return (NULL);
+	}
+	strcpy(new, s1);
+	for (i = 0; i < (int) n; i++)
+		new[strlen(s1) + i] = s2[i];
+	new[strlen(s1) + n] = '\0';
+	return (new);
 }
-
