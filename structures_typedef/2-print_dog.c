@@ -1,18 +1,9 @@
 #include <stdio.h>
 #include "dog.h"
 /**
- *print_dog - function that prints a struct dog
- *@d: input
- */
-void print_dog(struct dog *d)
-{
-	#include <stdio.h>
-#include "dog.h"
-/**
  *print_dog - function tha prints a struct dog
  *@d: struct pointer
  */
-
 void print_dog(struct dog *d)
 {
 	if (d != NULL)
