@@ -33,4 +33,4 @@ int main(int argc, char *argv[])
 	result = op_func(num1, num2);
 	printf("%d\n", result);
 	return (0);
-3-main.c}
+}
