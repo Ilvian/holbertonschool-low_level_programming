@@ -1,6 +1,5 @@
 #include "lists.h"
 #include <stdlib.h>
-#include <string.h>
 /**
  *insert_dnodeint_at_index - function that inserts a new node
  *@h: input
@@ -10,8 +9,8 @@
  */
 dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 {
-	dlistint_t *new_n, *temp = *h;
-	unsigned int i = 0;
+	dlistint_t *new_n, *temp;
+	unsigned int i;
 
 	if (h == NULL)
 		return (NULL);
@@ -21,35 +20,26 @@ dlistint_t *insert_dnodeint_at_index(dlistint_t **h, unsigned int idx, int n)
 	new_n->n = n;
 	new_n->next = NULL;
 	new_n->prev = NULL;
-	if (idx == 0)
+	if (idx == 0 || *h == NULL)
 	{
 		new_n->next = *h;
 		if (*h != NULL)
 			(*h)->prev = new_n;
 		*h = new_n;
-			return (new_n);
+		return (new_n);
 	}
-	while (i < idx - 1)
-	{
-		if (temp == NULL)
-		{
-			free(new_n);
-			return (NULL);
-		}
+	temp = *h;
+	for (i = 0; i < idx - 1 && temp != NULL; i++)
 		temp = temp->next;
-		i++;
-	}
-	if (temp->next == NULL)
+	if (temp == NULL)
 	{
-		temp->next = new_n;
-		new_n->prev = temp;
+		free(new_n);
+		return (NULL);
 	}
-	else
-	{
-		new_n->next = temp->next;
-		new_n->prev = temp;
+	new_n->next = temp->next;
+	new_n->prev = temp;
+	if (temp->next != NULL)
 		temp->next->prev = new_n;
-		temp->next = new_n;
-	}
+	temp->next = new_n;
 	return (new_n);
 }
