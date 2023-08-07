@@ -18,7 +18,7 @@ int main(int argc, char *argv[]) {
     if (argc != 3) error_and_exit("Usage:", "cp file_from file_to", 97);
 
     fd_from = open(argv[1], O_RDONLY);
-    if (fd_from == -1) error_and_exit("Error: Can't read from", argv[1], 98);
+    if (fd_from == -1) error_and_exit("Error: Can't read from file", argv[1], 98);
 
     fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
     if (fd_to == -1) error_and_exit("Error: Can't write to", argv[2], 99);
@@ -30,7 +30,7 @@ int main(int argc, char *argv[]) {
         }
     }
 
-    if (count == -1) error_and_exit("Error: Can't read from", argv[1], 98);
+    if (count == -1) error_and_exit("Error: Can't read from file", argv[1], 98);
 
     if (close(fd_from) == -1 || close(fd_to) == -1) error_and_exit("Error: Can't close fd", "", 100);
 
