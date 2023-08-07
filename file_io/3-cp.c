@@ -1,39 +1,72 @@
-#include <stdio.h>
-#include <fcntl.h>
 #include <unistd.h>
+#include <fcntl.h>
+#include <sys/types.h>
+#include <sys/stat.h>
+#include <stdio.h>
 #include <stdlib.h>
 
-#define BUFFER_SIZE 1024
-
-void error_and_exit(char *msg, char *file, int code) {
-    dprintf(2, "%s %s", msg, file);
-    exit(code);
+/**
+ * closefd - closes file descriptors
+ *@fd1: first file
+ *@fd2: second file
+ */
+void closefd(int fd1, int fd2)
+{
+	if (close(fd1) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd1);
+		exit(100);
+	}
+	if (close(fd2) == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't close fd %i\n", fd2);
+		exit(100);
+	}
 }
 
-int main(int argc, char *argv[]) {
-    char buffer[BUFFER_SIZE];
-    int fd_from, fd_to;
-    ssize_t count;
 
-    if (argc != 3) error_and_exit("Usage:", "cp file_from file_to", 97);
+/**
+ * main - Entry point
+ * @argc: number of argumenst supplied to argv
+ * @argv: vectorial array of arguments
+ * Return: Always 0 (Success)
+ */
 
-    fd_from = open(argv[1], O_RDONLY);
-    if (fd_from == -1) error_and_exit("Error: Can't read from file", argv[1], 98);
+int main(int argc, char *argv[])
+{
+	int fdr, fdw;
+	char buffer[1024 * 8];
+	int n, m;
 
-    fd_to = open(argv[2], O_WRONLY | O_CREAT | O_TRUNC, 0664);
-    if (fd_to == -1) error_and_exit("Error: Can't write to", argv[2], 99);
-
-    while ((count = read(fd_from, buffer, BUFFER_SIZE)) > 0) {
-        if (write(fd_to, buffer, count) != count) {
-            close(fd_from);
-            error_and_exit("Error: Can't write to", argv[2], 99);
-        }
-    }
-
-    if (count == -1) error_and_exit("Error: Can't read from file", argv[1], 98);
-
-    if (close(fd_from) == -1 || close(fd_to) == -1) error_and_exit("Error: Can't close fd", "", 100);
-
-    return (0);
+	if (argc != 3)
+	{
+		dprintf(STDERR_FILENO, "Usage: cp file_from file_to\n");
+		exit(97);
+	}
+	fdr = open(argv[1], O_RDONLY);
+	fdw = open(argv[2], O_WRONLY | O_TRUNC | O_CREAT, 0664);
+	if (fdr == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+		exit(98);
+	}
+	if (fdw == -1)
+	{
+		dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+		exit(99);
+	}
+		n = read(fdr, buffer, 1024 * 8);
+		if (n == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't read from file %s\n", argv[1]);
+			exit(98);
+		}
+		m = write(fdw, buffer, n);
+		if (m == -1)
+		{
+			dprintf(STDERR_FILENO, "Error: Can't write to %s\n", argv[2]);
+			exit(99);
+		}
+		closefd(fdr, fdw);
+	return (0);
 }
-
