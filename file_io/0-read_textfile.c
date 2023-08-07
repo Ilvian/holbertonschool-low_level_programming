@@ -4,7 +4,7 @@
 #include <fcntl.h>
 #include "main.h"
 /**
- * read_textfile - function that reads a text file 
+ * read_textfile - function that reads a text file
  * and prints it to the POSIX standard output
  * @filename: input
  * @letters: input
@@ -15,7 +15,7 @@ ssize_t read_textfile(const char *filename, size_t letters)
 	int fd;
 	ssize_t nread, nwrite;
 	char *buffer;
-	
+
 	if (filename == NULL)
 		return (0);
 	fd = open(filename, O_RDONLY);
