@@ -6,7 +6,7 @@
 #define BUFFER_SIZE 1024
 
 void error_and_exit(char *msg, char *file, int code) {
-    dprintf(2, "%s %s\n", msg, file);
+    dprintf(2, "%s %s", msg, file);
     exit(code);
 }
 
